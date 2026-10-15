@@ -2224,6 +2224,13 @@ ul {
 }
 .detail-list strong { font-size: .88rem; }
 .detail-list p { margin: 6px 0 10px; font-size: .82rem; }
+.detail-date {
+    display: block;
+    color: var(--primary);
+    font-family: var(--mono);
+    font-size: .65rem;
+    margin-bottom: 4px;
+}
 
 /* ===== CV ===== */
 .cv-section { margin-top: 100px; }
