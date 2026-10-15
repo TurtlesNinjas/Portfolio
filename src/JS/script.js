@@ -449,3 +449,40 @@ document.addEventListener(
 
     }
 );
+
+
+
+/* =====================================================
+   MODALE CV
+===================================================== */
+
+const cvModal = document.getElementById("cvModal");
+const cvOpen  = document.getElementById("cvOpen");
+const cvClose = document.getElementById("cvClose");
+const cvFrame = cvModal.querySelector("iframe");
+
+function openCV() {
+    if (!cvFrame.src || cvFrame.src === window.location.href) {
+        cvFrame.src = cvFrame.dataset.src;   // chargé à l'ouverture seulement
+    }
+    cvModal.classList.add("open");
+    cvModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+}
+
+function closeCV() {
+    cvModal.classList.remove("open");
+    cvModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+}
+
+cvOpen.addEventListener("click", openCV);
+cvClose.addEventListener("click", closeCV);
+
+cvModal.addEventListener("click", e => {
+    if (e.target === cvModal) closeCV();   // clic en dehors
+});
+
+document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeCV();
+});
