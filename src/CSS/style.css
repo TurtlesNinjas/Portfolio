@@ -2306,3 +2306,18 @@ ul {
     .cv-modal { padding: 0; }
 }
 
+/* ===== PHOTO ===== */
+.photo-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;          /* recadre sans déformer */
+    object-position: center top; /* garde le visage visible */
+    filter: grayscale(20%) contrast(1.05);
+    transition: filter .4s ease;
+}
+
+.photo-frame:hover .photo-img {
+    filter: none;
+}
+
